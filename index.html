@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="utility.css" />
+  <link rel="stylesheet" href="playbar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <div class="nav">
+      
+    </div> -->
+  <div class="container">
+    <div class="left">
+      <div class="div" style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          ">
+        <div class="logo" style="background-color: transparent">
+          <img class="invert-icon" src="svgs/logo.svg" alt="" />
+        </div>
+        <div class="cross" id="cross">
+          <img src="svgs/close.svg" alt="" srcset="" class="invert-icon" />
+        </div>
+      </div>
+      <hr style="margin: 0px 15px" />
+      <div class="searchbar bg">
+        <div class="search">
+          <img src="svgs/search.svg" class="invert-icon" alt="" />
+        </div>
+        <input type="text" class="text-input" placeholder="What do you want to play?" />
+
+        <div class="collection">
+          <img src="svgs/playlist.svg" class="invert-icon bg" alt="" />
+        </div>
+      </div>
+
+      <div class="library">
+        <div class="playlist">
+          <ul class="playlist-list"></ul>
+        </div>
+      </div>
+      <hr style="margin: 0px 15px" />
+
+      <div class="kem">
+        <div class="prem"><button class="sec">Premium</button></div>
+        <div class="vline" style="
+              width: 2px;
+              height: 15px;
+              background-color: #ccc;
+              margin: 0 0px;
+            "></div>
+        <div class="support"><button class="sec">Support</button></div>
+        <div class="vline" style="
+              width: 2px;
+              height: 15px;
+              background-color: #ccc;
+              margin: 0 0px;
+            "></div>
+        <div class="download"><button class="sec">Download</button></div>
+      </div>
+
+      <div class="section">
+        <div class="sign">Sign up</div>
+        <div class="login">Log in</div>
+      </div>
+
+      <footer>
+        <div class="footer-links">
+          <a href="https://www.spotify.com/in-en/legal/">Legal</a>
+          <a href="https://www.spotify.com/in-en/safetyandprivacy/">Safety & Privacy Center</a>
+          <a href="https://www.spotify.com/in-en/legal/privacy-policy/">Privacy Policy</a>
+          <a href="https://www.spotify.com/in-en/legal/cookies-policy/">Cookies</a>
+          <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">About Ads</a>
+          <a href="https://www.spotify.com/in-en/accessibility/">Accessibility</a>
+        </div>
+
+        <div class="footer-lang">
+          <button class="lang-btn bg-2">🌐 English</button>
+        </div>
+      </footer>
+    </div>
+
+    <div class="right bg-2">
+      <div class="tsong">
+        <div class="h" style="
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+              align-items: center;
+              margin: 0px 20px;
+              background-color: transparent;
+            ">
+          <div id="ham" style="background-color: transparent">
+            <img src="svgs/hamburger.svg" class="invert-icon" srcset="" />
+          </div>
+          <div class="heading">Trending Song</div>
+        </div>
+        <div class="ts"></div>
+      </div>
+      <div class="partist">
+        <div class="heading">Popular Artist</div>
+        <div class="ts-1">
+
+        </div>
+      </div>
+      <div class="palbm">
+        <div class="heading">Popular Albums</div>
+        <div class="ts"></div>
+      </div>
+      <div id="p" class="play hover">
+        <img id="play" src="svgs/start.svg" alt="Play" style="object-fit: contain; background-color: transparent;" />
+      </div>
+
+      <!-- Sliding Playbar -->
+      <div class="playbar" id="playbar">
+        <div class="abovebar">
+          <div class="invert-icon hover" id="previous">
+            <img src="svgs/prevsong.svg" alt="Previous" style="background-color: transparent;" />
+          </div>
+          <div class="invert-icon hover" id="next">
+            <img src="svgs/nextsong.svg" alt="Next" style="background-color: transparent;" />
+          </div>
+        </div>
+
+        <div style="display: flex;justify-content: space-between;align-items: center;background-color: transparent; padding: 20px 0px;">
+          <div class="songinfo"></div>
+        <div class="songtime"></div>
+        </div>
+
+        <div class="seekbar">
+          <div class="circle"></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-columns">
+          <div class="column bg-2">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Jobs</a>
+            <a href="#">For the Record</a>
+          </div>
+          <div class="column bg-2">
+            <h4>Communities</h4>
+            <a href="#">For Artists</a>
+            <a href="#">Developers</a>
+            <a href="#">Advertising</a>
+            <a href="#">Investors</a>
+            <a href="#">Vendors</a>
+          </div>
+          <div class="column bg-2">
+            <h4>Useful links</h4>
+            <a href="#">Support</a>
+            <a href="#">Free Mobile App</a>
+          </div>
+          <div class="column bg-2">
+            <h4>Spotify Plans</h4>
+            <a href="#">Premium Individual</a>
+            <a href="#">Premium Duo</a>
+            <a href="#">Premium Family</a>
+            <a href="#">Premium Student</a>
+            <a href="#">Spotify Free</a>
+          </div>
+          <div class="sicon column" style="display: flex; gap: 7px; background-color: #191919">
+            <div class="icon" style="
+                  display: flex;
+                  width: 40px;
+                  background-color: #2a2a2a;
+                  align-items: center;
+                  justify-content: center;
+                  height: 40px;
+                  border-radius: 100%;
+                ">
+              <img src="svgs/instagram-stroke-rounded.svg" style="
+                    width: 70%;
+                    height: 62%;
+                    object-fit: contain;
+
+                    background-color: #2a2a2a;
+                  " alt="" srcset="" />
+            </div>
+            <div class="icon" style="
+                  display: flex;
+                  width: 40px;
+                  background-color: #2a2a2a;
+                  align-items: center;
+                  justify-content: center;
+                  height: 40px;
+                  border-radius: 100%;
+                ">
+              <img src="svgs/fbook-icon.svg" style="
+                    width: 70%;
+                    height: 62%;
+                    object-fit: contain;
+
+                    background-color: #2a2a2a;
+                  " alt="" srcset="" />
+            </div>
+            <div class="icon" style="
+                  display: flex;
+                  width: 40px;
+                  background-color: #2a2a2a;
+                  align-items: center;
+                  justify-content: center;
+                  height: 40px;
+                  border-radius: 100%;
+                ">
+              <img src="svgs/twitter-icon.svg" style="
+                    width: 70%;
+                    height: 62%;
+                    object-fit: contain;
+
+                    background-color: #2a2a2a;
+                  " alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Spotify AB</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
