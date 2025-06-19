@@ -89,7 +89,7 @@ async function getSongs(folder) {
 }
 
 async function getplaylist() {
-  let response = await fetch("http://127.0.0.1:3000/songs/");
+  let response = await fetch("/songs/");
   let text = await response.text();
   let outerDiv = document.createElement("div");
   outerDiv.innerHTML = text;
@@ -105,7 +105,7 @@ async function getplaylist() {
     const folderName = folderUrl.split("/").filter(Boolean).pop();
 
     try {
-      const playlistUrl = folderUrl + "playlist-1";
+      const playlistUrl = `/songs/${folderName}/playlist-1/`;
       const res = await fetch(playlistUrl);
       const folderText = await res.text();
 
@@ -167,7 +167,7 @@ async function getplaylist() {
 
 async function displayartist() {
   try {
-    const response = await fetch("http://127.0.0.1:3000/artist/");
+    const response = await fetch("/artist/");
     const text = await response.text();
 
     const outerDiv = document.createElement("div");
@@ -178,12 +178,10 @@ async function displayartist() {
       if (artistLink.getAttribute("href") === "../") continue;
 
       let artistUrl = artistLink.href;
-      let artistName = decodeURIComponent(
-        artistUrl.split("/artist/")[1] || ""
-      ).replace("/", "");
+      let artistName = decodeURIComponent(artistUrl.split("/artist/")[1] || "").replace("/", "");
 
-      const playlistUrl = `${artistUrl}playlist-1/`;
-      const coverUrl = `${artistUrl}cover.jpg`;
+      const playlistUrl = `/artist/${artistName}/playlist-1/`;
+      const coverUrl = `/artist/${artistName}/cover.jpg`;
 
       try {
         const res = await fetch(playlistUrl);
@@ -211,10 +209,7 @@ async function displayartist() {
             </div>`;
         }
       } catch (err) {
-        console.error(
-          `Failed to load playlist or songs for ${artistName}:`,
-          err
-        );
+        console.error(`Failed to load playlist or songs for ${artistName}:`, err);
       }
     }
   } catch (err) {
@@ -243,9 +238,8 @@ async function displayartist() {
 
 function playMusic(track, icon) {
   const fileName = track;
-  const baseUrl = "http://127.0.0.1:3000";
   const encodedFileName = encodeURIComponent(fileName);
-  const fullUrl = `${baseUrl}/${currFolder}/playlist-1/${encodedFileName}`;
+  const fullUrl = `/${currFolder}/playlist-1/${encodedFileName}`;
 
   currentsong.src = fullUrl;
   currentsong.play();
@@ -355,9 +349,6 @@ async function main() {
     lefts[0].style.display = "none";
     document.getElementById("p").style.display = "flex";
   });
-
-
-  
 }
 
 main();
